@@ -15,11 +15,6 @@ npm install -g webpack-cli
 ```cd project-name
 npm install
 ```
-
-### To start node daemon
-```nodemon```
-* Delete everything inside public folder and place your theme there
-
 ### Install react and babel related stuffs
 ```npm i -S react react-dom
 npm i -S babel-loader @babel/core @babel/preset-env
@@ -28,7 +23,8 @@ npm i -S @babel/preset-es2015
 ```
 
 ### Steps to Setup your project
- * Under public add your theme assets files.
+ * Delete everything inside public folder
+ * Under public folder add your theme assets files.
  * Create directory named /src and create file named app.js inside it, this will act as the entry point for react code.
  * Create webpack.config.js necessary modules for building the react code
     * Your webpack config should contain 
@@ -40,4 +36,10 @@ npm i -S @babel/preset-es2015
     ```<script type="text/javascript" src="build/bundle.js"></script>```
  * Add div with id="root" to same file which will act as deployment for react code.
 
-
+### Steps to start node and compile react code
+ * To start Node Daemon use ```nodemon``` 
+    * This will start a webserver at port 3000. 
+    * You can browse to http://localhost:3000/ to see the basic view.
+ * To compile React data to bundle.js run ```webpack -w``` 
+    * This will run a watch daemon and will keep building files if you change them
+    * You can also run ```webpack``` to compile it once.
